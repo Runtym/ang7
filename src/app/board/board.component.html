@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>게시판</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>작성시간</th>
+        <th>조회수</th>
+        <th>좋아요</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="boardList.length==0">
+        <td colspan="7">조회된 내용이 없습니다.</td>
+      </tr>
+      <tr *ngFor="let board of boardList" (click)="goPage('view/'+board.biNum)">
+        <td>{{board.biNum}}</td>
+        <td>{{board.biTitle}}</td>
+        <td>{{board.biWriter}}</td>
+        <td>{{board.biCredat}}</td>
+        <td>{{board.biCretim}}</td>
+        <td>{{board.biCnt}}</td>
+        <td>{{board.biLike}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="goPage('/insert/'+biType)">글쓰기</button>
+</div>

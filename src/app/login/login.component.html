@@ -1,0 +1,14 @@
+
+<div *ngIf="!isLogin">
+  <label for="id">아이디</label>
+  <input type="text" id="id"[(ngModel)]="us.uiId"><br>
+  <label for="pwd">비밀번호</label>
+  <input type="password" id="pwd" [(ngModel)]="us.uiPwd"><br>
+  <button (click)="doLogin()">로그인</button>
+</div>
+<div *ngIf="isLogin">
+  아이디 : {{us.uiId}}<br>
+  비밀번호 : {{us.uiPwd}}<br>
+  번호 : {{us.uiNo}}<br>
+  나이 : {{us.uiAge}}<br>
+</div>

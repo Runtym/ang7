@@ -1,0 +1,10 @@
+<p>
+  {{title}}
+</p>
+<div>
+  <ul>
+    <li *ngFor="let cat of cats" (click)="clickCat(cat)">
+      이름 : {{cat.name}}, 나이 : {{cat.age}}
+    </li>
+  </ul>
+</div>
